@@ -12,6 +12,7 @@ public class BombTrajectory : MonoBehaviour
     public GameObject ammo;
     public float force;
     public Transform spawnPoint;
+    public GameObject gun;
 
     void Start()
     {
@@ -51,7 +52,7 @@ public class BombTrajectory : MonoBehaviour
         {
             //
             float time = t * i / (float)(lineRenderer.positionCount);
-            trajectoryPoint = transform.position + initalVelocity * time + 0.5f * Physics.gravity * time * time;
+            trajectoryPoint = spawnPoint.position + initalVelocity * time + 0.5f * Physics.gravity * time * time;
             lineRenderer.SetPosition(i, trajectoryPoint);
         }
 /*        if (Input.GetMouseButtonUp(0))
