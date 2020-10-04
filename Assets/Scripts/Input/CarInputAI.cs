@@ -50,6 +50,12 @@ public class CarInputAI : CarInput
 
     public void Update()
     {
+        if (!TargetWaypoint)
+        {
+            Debug.LogError("[AI Error] No Waypoints!");
+            return;
+        }
+
         Vector3 waypoint = (TargetWaypoint.transform.position + _waypointOffset) - transform.position;
         float angle = Vector3.SignedAngle(transform.forward, waypoint, Vector3.up);
         // Debug.Log(angle);

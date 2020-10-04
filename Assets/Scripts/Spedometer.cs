@@ -24,11 +24,8 @@ public class Spedometer : MonoBehaviour
         // this isn't really right but it'll wrok
         float degreesTotal = minRotation - maxRotation;
         float degreesBetween = degreesTotal / textPoints;
-        Debug.Log("degrees total: " + degreesTotal + " degreesBetween: " + degreesBetween);
         for (int i = 0; i < textPoints; ++i)
-        {
             CreateTextAtDegrees(minRotation - (degreesBetween * i));
-        }
         Destroy(textBasis);
     }
 
@@ -36,7 +33,6 @@ public class Spedometer : MonoBehaviour
     {
         var rotationLerp = Mathf.InverseLerp(minRotation, maxRotation, degrees);
         var value = Mathf.Lerp(minValue, maxValue, rotationLerp);
-        Debug.Log("degrees: " + degrees + " lerp: " + rotationLerp + " value: " + value);
         Vector3 noRotation = Vector3.up * innerTextRadius;
         Vector3 rotation = Quaternion.AngleAxis(degrees, Vector3.forward) * noRotation;
         var text = Object.Instantiate(textBasis);
