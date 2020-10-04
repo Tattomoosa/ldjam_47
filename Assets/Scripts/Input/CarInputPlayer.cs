@@ -12,6 +12,9 @@ public class CarInputPlayer : CarInput
             HorizontalSteeringAxis = Input.GetAxis("Horizontal"),
             VerticalSteeringAxis = Input.GetAxis("Vertical"),
             IsBraking = Input.GetKey(KeyCode.Space),
+            Fire = Input.GetMouseButtonDown(0),
+            SelectNextWeapon = Input.GetKeyDown(KeyCode.E),
+            SelectPrevWeapon = Input.GetKeyDown(KeyCode.W),
         };
     }
 }

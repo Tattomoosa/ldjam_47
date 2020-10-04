@@ -8,10 +8,12 @@ public class WeaponManager : MonoBehaviour
     public List<Transform> spawnLocations;
     int numOfWeapons;
     GameObject curWeapon;
+    private CarInput _input;
 
     // Start is called before the first frame update
     void Start()
     {
+        _input = GetComponent<CarInput>();
         numOfWeapons = weapons.Count;
         if(numOfWeapons > 0)
         {
@@ -31,7 +33,8 @@ public class WeaponManager : MonoBehaviour
 
     void checkInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        InputState inputState = _input.GetInput();
+        if (inputState.Fire)
         {
             if(curWeapon != null)
             {
@@ -40,14 +43,14 @@ public class WeaponManager : MonoBehaviour
                 weaponScript.fire(spawnLocations[weapons.IndexOf(curWeapon)].position);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (inputState.SelectNextWeapon)
         {
             if(curWeapon != null)
             {
                 curWeapon = weapons[(weapons.IndexOf(curWeapon) + 1) % numOfWeapons];
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (inputState.SelectPrevWeapon)
         {
             if (curWeapon != null)
             {

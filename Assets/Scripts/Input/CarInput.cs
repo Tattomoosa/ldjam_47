@@ -12,4 +12,7 @@ public struct InputState
     public float HorizontalSteeringAxis;
     public float VerticalSteeringAxis;
     public bool IsBraking;
+    public bool Fire;
+    public bool SelectPrevWeapon;
+    public bool SelectNextWeapon;
 }
