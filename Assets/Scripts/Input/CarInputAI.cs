@@ -11,13 +11,17 @@ public class CarInputAI : CarInput
     public WaypointManager waypointManager;
     
     public float waypointMaximumOffset = 40.0f;
+    public float speedRange = 0.1f;
+
+    public bool debugDraw = true;
         
     private InputState _input;
 
     private Vector3 _waypointOffset;
+    private float _speedOffset;
 
     private Waypoint _targetWaypoint;
-    [field: System.NonSerialized] public Waypoint TargetWaypoint
+    public Waypoint TargetWaypoint
     {
         get => _targetWaypoint;
         set
@@ -36,6 +40,7 @@ public class CarInputAI : CarInput
     {
         _input = new InputState();
         TargetWaypoint = waypointManager.GetFirstWaypoint();
+        _speedOffset = Random.Range(-speedRange, speedRange);
     }
 
     public override InputState GetInput()
@@ -46,14 +51,19 @@ public class CarInputAI : CarInput
     public void Update()
     {
         Vector3 waypoint = (TargetWaypoint.transform.position + _waypointOffset) - transform.position;
-        Debug.DrawRay(transform.position, waypoint, Color.green);
-        Debug.DrawRay(transform.position, transform.forward * 100.0f, Color.red);
         float angle = Vector3.SignedAngle(transform.forward, waypoint, Vector3.up);
         // Debug.Log(angle);
-        Debug.DrawRay(transform.position + (transform.forward * 100.0f), transform.right * (angle * 2.0f), Color.yellow);
-        
-        _input.VerticalSteeringAxis = 1.0f;
-        if (Mathf.Abs(angle) > 1.0f)
+        if (debugDraw)
+        {
+            Debug.DrawRay(TargetWaypoint.transform.position, _waypointOffset);
+            Debug.DrawRay(transform.position, waypoint, Color.green);
+            Debug.DrawRay(transform.position, transform.forward * 100.0f, Color.red);
+            Debug.DrawRay(transform.position + (transform.forward * 100.0f), transform.right * (angle * 2.0f),
+                Color.yellow);
+        }
+
+        _input.VerticalSteeringAxis = 1.0f + _speedOffset;
+        if (Mathf.Abs(angle) > 5.0f)
             _input.HorizontalSteeringAxis = Mathf.Clamp(angle, -1.0f, 1.0f);
         else
             _input.HorizontalSteeringAxis = 0.0f;

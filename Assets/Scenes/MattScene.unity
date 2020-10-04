@@ -2366,6 +2366,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 703081637}
     m_Modifications:
+    - target: {fileID: 2967293964880885488, guid: 9f7bd68087ad267479b541cb1dfe91a2,
+        type: 3}
+      propertyPath: m_Name
+      value: CarCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 3531110867179350280, guid: 9f7bd68087ad267479b541cb1dfe91a2,
         type: 3}
       propertyPath: m_Name
@@ -2431,6 +2436,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b4d528af991d358409050c44ebefd0dc, type: 2}
+    - target: {fileID: 7286606674987533647, guid: 9f7bd68087ad267479b541cb1dfe91a2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8751869
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286606674987533647, guid: 9f7bd68087ad267479b541cb1dfe91a2,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.22210884
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f7bd68087ad267479b541cb1dfe91a2, type: 3}
 --- !u!1001 &7963402732774365185
