@@ -8,12 +8,11 @@ public class Mine : Weapon
     public float beeperSpeed;
     public float armTime;
     public ParticleSystem explosionSystem;
-    SphereCollider explosionRadiusTrigger;
+    public SphereCollider explosionRadiusTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        explosionRadiusTrigger = GetComponent<SphereCollider>();
         explosionRadiusTrigger.enabled = false;
     }
 
@@ -42,15 +41,17 @@ public class Mine : Weapon
     private void OnTriggerEnter(Collider other)
     {
         CarData carDataScript = other.gameObject.transform.GetComponent<CarData>();
+        explosionRadiusTrigger.enabled = false;
         carDataScript.takeDamage(damage);
         // explosionSystem.Play();
         // now sound is on object too so i just set playOnAwake and disabled it and changed this - matt
         explosionSystem.gameObject.SetActive(true);
-        foreach (Transform t in transform)
+        foreach (Transform t in transform.parent)
         {
-            if(t.gameObject != explosionSystem.gameObject)
+            if(t.gameObject != explosionSystem.gameObject && t.gameObject != gameObject)
                 t.gameObject.SetActive(false);
         }
+
 
         Destroy(this.gameObject, explosionSystem.main.duration);
     }
