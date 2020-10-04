@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(LineRenderer))]
+[RequireComponent(typeof(LineRenderer))]
 public class BombTrajectory : MonoBehaviour
 {
     public Vector3 initalVelocity;
