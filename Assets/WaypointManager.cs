@@ -8,7 +8,7 @@ public class WaypointManager : MonoBehaviour
     private List<Waypoint> _waypoints;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _waypoints = GetComponentsInChildren<Waypoint>().ToList();
     }

@@ -19,7 +19,6 @@ public class Waypoint : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     // public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("WAYPOINT TRIGGER ENTERED!!!");
         var aiController = other.transform.parent.GetComponent<CarInputAI>();
         if (aiController)
         {
