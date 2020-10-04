@@ -43,6 +43,9 @@ public class Mine : Weapon
     {
         if (other.tag == "Car")
         {
+            Debug.Log(other);
+            CarData carDataScript = other.gameObject.transform.parent.GetComponent<CarData>();
+            carDataScript.takeDamage(damage);
             explosionSystem.Play();
             foreach (Transform t in transform)
             {
