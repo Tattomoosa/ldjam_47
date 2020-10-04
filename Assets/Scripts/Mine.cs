@@ -2,22 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mine : MonoBehaviour
+public class Mine : Weapon
 {
     public Light beeper;
-    public float speed;
+    public float beeperSpeed;
+    public float armTime;
     ParticleSystem explosionSystem;
+    SphereCollider explosionRadiusTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        explosionSystem = GetComponent<ParticleSystem>();    
+        explosionSystem = GetComponent<ParticleSystem>();
+        explosionRadiusTrigger = GetComponent<SphereCollider>();
+        explosionRadiusTrigger.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    override public void fire(Vector3 spawnPosition)
     {
-        beeper.intensity = Mathf.PingPong(Time.time * speed, 1);
+        transform.position = spawnPosition;
+        StartCoroutine(armMine());
+    }
+
+    IEnumerator armMine()
+    {
+        yield return new WaitForSeconds(armTime);
+        explosionRadiusTrigger.enabled = true;
+        StartCoroutine(armed());
+    }
+
+    IEnumerator armed()
+    {
+        while (true)
+        {
+            beeper.intensity = Mathf.PingPong(Time.time * beeperSpeed, 1);
+            yield return null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
