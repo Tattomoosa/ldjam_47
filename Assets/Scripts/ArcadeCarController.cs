@@ -50,6 +50,10 @@ public class ArcadeCarController : MonoBehaviour
     private bool _brakeInput;
     private Vector3 _motionTargetOffset;
 
+    private float _frontLeftWheelAngle;
+    private float _frontRightWheelAngle;
+    private float _wheelChange = 1.0f;
+
     
 
     void Start()
@@ -97,9 +101,7 @@ public class ArcadeCarController : MonoBehaviour
 
         // Apply forces to speedInput for rigidbody
         if (_speedInput > 0)
-        {
             _speedFrame = _speedInput * forwardAccel * 1000f;
-        }
         else if (_speedInput < 0)
             _speedFrame = _speedInput * reverseAccel * 1000f;
         

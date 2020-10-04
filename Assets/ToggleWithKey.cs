@@ -7,14 +7,15 @@ public class ToggleWithKey : MonoBehaviour
     public KeyCode keyCode = KeyCode.None;
     public GameObject toggleObject;
 
+    public bool initialState = false;
     public bool doToggleTime = false;
 
     private float previousTimeScale;
     // Start is called before the first frame update
-
-    void Awake()
+    void Start()
     {
         previousTimeScale = Time.timeScale;
+        toggleObject.SetActive(initialState);
     }
 
     // Update is called once per frame

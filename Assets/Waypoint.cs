@@ -22,7 +22,7 @@ public class Waypoint : MonoBehaviour
         var aiController = other.transform.parent.GetComponent<CarInputAI>();
         if (aiController)
         {
-            aiController.targetWaypoint = _manager.GetNextWaypoint(this);
+            aiController.TargetWaypoint = _manager.GetNextWaypoint(this);
         }
     }
 }
