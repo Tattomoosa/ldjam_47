@@ -10,10 +10,12 @@ public class RaceStartSystem : MonoBehaviour
     public GameObject carParent;
     public List<GameObject> lights;
     private ArcadeCarController[] _cars;
+    WeaponManager[] weaponManagers;
     
     void Start()
     {
         _cars = carParent.GetComponentsInChildren<ArcadeCarController>();
+        weaponManagers = carParent.GetComponentsInChildren<WeaponManager>();
         if (!skipStartupSequence)
             StartCoroutine(StartupSequence());
     }
@@ -24,6 +26,8 @@ public class RaceStartSystem : MonoBehaviour
             light.SetActive(false);
         foreach (var car in _cars)
             car.enabled = false;
+        foreach (var weaponManager in weaponManagers)
+            weaponManager.enabled = false;                
         yield return new WaitForSeconds(waitBefore);
         // foreach (GameObject light in lights)
         for (int i = 0; i < lights.Count; ++i)
@@ -35,5 +39,7 @@ public class RaceStartSystem : MonoBehaviour
         }
         foreach (var car in _cars)
             car.enabled = true;
+        foreach (var weaponManager in weaponManagers)
+            weaponManager.enabled = true;
     }
 }

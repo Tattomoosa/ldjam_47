@@ -11,6 +11,8 @@ public class CarData : MonoBehaviour
     public int respawnTime;
 
     public List<GameObject> carObjects;
+    public GameObject destroyedCar;
+
     // ok this is kinda dumb but otherwise we need ui reference
     public UnityEvent<float, float, float> setDamageUI;
 
