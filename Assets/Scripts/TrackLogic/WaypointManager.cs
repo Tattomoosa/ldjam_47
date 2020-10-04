@@ -25,6 +25,8 @@ public class WaypointManager : MonoBehaviour
 
     public Waypoint GetFirstWaypoint()
     {
-        return _waypoints[0];
+        if (_waypoints.Count() > 0)
+            return _waypoints[0];
+        return null;
     }
 }

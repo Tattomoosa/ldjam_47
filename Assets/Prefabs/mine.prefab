@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 549898355171140774}
   - component: {fileID: 8493931868577871520}
   - component: {fileID: 4686053611077929930}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Explosions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4890,7 +4890,7 @@ GameObject:
   - component: {fileID: 2237723906127368231}
   - component: {fileID: 561366303242362191}
   - component: {fileID: 4639608762111514425}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LandMine.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4972,7 +4972,7 @@ GameObject:
   - component: {fileID: 4543723968119264392}
   - component: {fileID: 3729719798097396468}
   - component: {fileID: 3893599563728355395}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5010,8 +5010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c3dc36a3cd9d3489a1739874bbf947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponImage: {fileID: 0}
-  damage: 10
+  weaponImage: {fileID: 21300000, guid: 0e5b90266fcacd34f87016fff4f8fe05, type: 3}
+  damage: 2
   beeper: {fileID: 4543723969768854056}
   beeperSpeed: 3
   armTime: 1
@@ -5027,8 +5027,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.54
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.1105375
+  m_Center: {x: 0.4294625, y: 0.02, z: 0}
 --- !u!54 &3893599563728355395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5055,7 +5055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4543723969768854057}
   - component: {fileID: 4543723969768854056}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5148,7 +5148,7 @@ GameObject:
   - component: {fileID: 5243797214318528975}
   - component: {fileID: 6094169635672485452}
   - component: {fileID: 7539589203424950867}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5229,7 +5229,7 @@ GameObject:
   - component: {fileID: 6298385576241955652}
   - component: {fileID: 5625673602871433832}
   - component: {fileID: 6528248635937317540}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LandMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

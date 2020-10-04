@@ -41,19 +41,15 @@ public class Mine : Weapon
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Car")
+        CarData carDataScript = other.gameObject.transform.GetComponent<CarData>();
+        carDataScript.takeDamage(damage);
+        explosionSystem.Play();
+        foreach (Transform t in transform)
         {
-            Debug.Log(other);
-            CarData carDataScript = other.gameObject.transform.parent.GetComponent<CarData>();
-            carDataScript.takeDamage(damage);
-            explosionSystem.Play();
-            foreach (Transform t in transform)
-            {
-                if(t.gameObject != explosionSystem.gameObject)
-                    t.gameObject.SetActive(false);
-            }
-            Destroy(this.gameObject, explosionSystem.main.duration);
-
+            if(t.gameObject != explosionSystem.gameObject)
+                t.gameObject.SetActive(false);
         }
+
+        Destroy(this.gameObject, explosionSystem.main.duration);
     }
 }
