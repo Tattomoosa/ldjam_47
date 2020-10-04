@@ -64,12 +64,8 @@ public class ArcadeCarController : MonoBehaviour
     private bool _brakeInput;
     private Vector3 _motionTargetOffset;
 
-
     private float _frontLeftWheelAngle;
     private float _frontRightWheelAngle;
-    private float _wheelChange = 1.0f;
-
-    
 
     void Start()
     {
@@ -133,7 +129,12 @@ public class ArcadeCarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _grounded = false;
+        if (!motionTargetRigidbody)
+        {
+            Debug.LogError("[ArcadeCarController] Rigidbody has been destroyed");
+            return;
+        }
+
         RaycastHit hit;
         Debug.DrawRay(groundCheckOrigin.position, -transform.up * groundRayLength);
         if (Physics.Raycast(groundCheckOrigin.position, -transform.up, out hit, groundRayLength, whatIsGround))
@@ -141,10 +142,6 @@ public class ArcadeCarController : MonoBehaviour
             _grounded = true;
             // rotate parallel to ground
             modelTransform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
-        }
-
-        if (_grounded)
-        {
             motionTargetRigidbody.drag = dragOnGround;
             if (_brakeInput)
                 motionTargetRigidbody.AddForce(brakeStrength * -motionTargetRigidbody.velocity);
@@ -154,9 +151,28 @@ public class ArcadeCarController : MonoBehaviour
         }
         else
         {
+            _grounded = false;
             motionTargetRigidbody.drag = 0.1f;
             motionTargetRigidbody.AddForce(Vector3.down * (extraFallingGravity * 1000f));
         }
+    }
 
+    public Rigidbody GetMotionTarget()
+    {
+        return motionTargetRigidbody;
+    }
+
+    private void OnEnable()
+    {
+        if (motionTargetRigidbody)
+            motionTargetRigidbody.gameObject.SetActive(true);
+        else
+            Debug.LogError("[ArcadeCarController] Rigidbody has been destroyed");
+    }
+    
+    private void OnDisable()
+    {
+        if (motionTargetRigidbody)
+            motionTargetRigidbody.gameObject.SetActive(false);
     }
 }

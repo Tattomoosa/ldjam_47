@@ -251,6 +251,41 @@ PrefabInstance:
       propertyPath: waypointManager
       value: 
       objectReference: {fileID: 1519656317087749007}
+    - target: {fileID: 6138185693602169370, guid: 0ab22d5e87bd0d84496000750881888b,
+        type: 3}
+      propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138185693602169370, guid: 0ab22d5e87bd0d84496000750881888b,
+        type: 3}
+      propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138185693602169370, guid: 0ab22d5e87bd0d84496000750881888b,
+        type: 3}
+      propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138185693602169370, guid: 0ab22d5e87bd0d84496000750881888b,
+        type: 3}
+      propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7536255426812985776}
+    - target: {fileID: 6138185693602169370, guid: 0ab22d5e87bd0d84496000750881888b,
+        type: 3}
+      propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ProgressBar, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138185693602169370, guid: 0ab22d5e87bd0d84496000750881888b,
+        type: 3}
+      propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWithMinMax
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138185693602169370, guid: 0ab22d5e87bd0d84496000750881888b,
+        type: 3}
+      propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7048650608946864799, guid: 0ab22d5e87bd0d84496000750881888b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -764,6 +799,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8620390332025386579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7536255426812985776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2249529546826708963, guid: 098b3b6d6b4499f4289aea449b93ae23,
+    type: 3}
+  m_PrefabInstance: {fileID: 8620390332025386579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a220f5c4abb48d4da4ae3508f46bb0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2119140299470327972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7694810675628041975, guid: 098b3b6d6b4499f4289aea449b93ae23,
