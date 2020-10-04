@@ -7,13 +7,12 @@ public class Mine : Weapon
     public Light beeper;
     public float beeperSpeed;
     public float armTime;
-    ParticleSystem explosionSystem;
+    public ParticleSystem explosionSystem;
     SphereCollider explosionRadiusTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        explosionSystem = GetComponent<ParticleSystem>();
         explosionRadiusTrigger = GetComponent<SphereCollider>();
         explosionRadiusTrigger.enabled = false;
     }
@@ -42,14 +41,16 @@ public class Mine : Weapon
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Car")
+        if (other.tag == "Car")
         {
-            foreach(Transform t in transform)
+            explosionSystem.Play();
+            foreach (Transform t in transform)
             {
-                t.gameObject.SetActive(false);
-            }    
+                if(t.gameObject != explosionSystem.gameObject)
+                    t.gameObject.SetActive(false);
+            }
+            Destroy(this.gameObject, explosionSystem.main.duration);
+
         }
-        explosionSystem.Play();
-        Destroy(this, explosionSystem.main.duration);
     }
 }
