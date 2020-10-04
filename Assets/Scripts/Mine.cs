@@ -43,7 +43,9 @@ public class Mine : Weapon
     {
         CarData carDataScript = other.gameObject.transform.GetComponent<CarData>();
         carDataScript.takeDamage(damage);
-        explosionSystem.Play();
+        // explosionSystem.Play();
+        // now sound is on object too so i just set playOnAwake and disabled it and changed this - matt
+        explosionSystem.gameObject.SetActive(true);
         foreach (Transform t in transform)
         {
             if(t.gameObject != explosionSystem.gameObject)

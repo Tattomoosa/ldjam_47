@@ -134,9 +134,9 @@ MonoBehaviour:
   groundCheckOrigin: {fileID: 3531110869014521422}
   groundRayLength: 0.8
   maxDriveSpeed: 200
-  maxPitch: -1
-  minDriveSpeed: 0
-  minPitch: -0.3
+  maxPitch: 1
+  minDriveSpeed: 0.2
+  minPitch: 0.1
   engineSound: {fileID: 3531110867179350277}
   onSetLap:
     m_PersistentCalls:
@@ -153,13 +153,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c74ab8d8b2d7a9840abbfecb77692e6c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 0
+  m_Volume: 0.056
+  m_Pitch: 0.1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -282,6 +282,9 @@ MonoBehaviour:
   carObjects:
   - {fileID: 3531110867734199861}
   - {fileID: 3531110867237244508}
+  setDamageUI:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &5629307462943075855
 BoxCollider:
   m_ObjectHideFlags: 0
