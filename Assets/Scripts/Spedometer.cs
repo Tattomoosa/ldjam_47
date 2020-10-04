@@ -43,6 +43,7 @@ public class Spedometer : MonoBehaviour
         text.transform.SetParent(this.transform);
         text.transform.localPosition = rotation;
         // text.text = Mathf.FloorToInt(value).ToString();
+        var mphValue = value * 0.447f;
         text.text = (Mathf.Round(value / 5) * 5).ToString();
     }
 
