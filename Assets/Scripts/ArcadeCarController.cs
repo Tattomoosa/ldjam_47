@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.TextCore;
 
@@ -36,11 +37,24 @@ public class ArcadeCarController : MonoBehaviour
     [Header("Sound")]
     public float maxDriveSpeed = 50.0f;
 
+    [Header("Audio")]
     public float maxPitch = 1.0f;
     // TODO below this idle, set a bit higher
     public float minDriveSpeed = 0.0f;
     public float minPitch = -2.0f;
     public AudioSource engineSound;
+
+    private int _currentLap;
+    public int CurrentLap
+    {
+        get => _currentLap;
+        set
+        {
+            _currentLap = value;
+            onSetLap.Invoke(value);
+        }
+    }
+    public UnityEvent<int> onSetLap;
 
     private CarInput _input;
     private bool _grounded;
@@ -49,6 +63,7 @@ public class ArcadeCarController : MonoBehaviour
     private float _speedFrame;
     private bool _brakeInput;
     private Vector3 _motionTargetOffset;
+
 
     private float _frontLeftWheelAngle;
     private float _frontRightWheelAngle;

@@ -10,7 +10,7 @@ public class Waypoint : MonoBehaviour
     void Start()
     {
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-        // meshRenderer.enabled = false;
+        meshRenderer.enabled = false;
         _manager = transform.parent.GetComponent<WaypointManager>();
         if (!_manager)
             Debug.LogError("Waypoints must be children of a waypoint manager!");

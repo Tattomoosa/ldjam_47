@@ -1,49 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &313178731213310261
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8154556507596595471}
-  - component: {fileID: 2427419189685812485}
-  m_Layer: 10
-  m_Name: WaypointCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8154556507596595471
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313178731213310261}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6925980090182457196}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2427419189685812485
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313178731213310261}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 15
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1407706136055122189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   steeringRaycastLength: 10
   waypointManager: {fileID: 0}
+  waypointMaximumOffset: 40
+  speedRange: 0.1
+  debugDraw: 1
 --- !u!1001 &5845391469765983847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,12 +95,6 @@ PrefabInstance:
 --- !u!1 &6925980090182457199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3531110867179350280, guid: 9f7bd68087ad267479b541cb1dfe91a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 5845391469765983847}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6925980090182457196 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3531110867179350283, guid: 9f7bd68087ad267479b541cb1dfe91a2,
     type: 3}
   m_PrefabInstance: {fileID: 5845391469765983847}
   m_PrefabAsset: {fileID: 0}

@@ -14,7 +14,8 @@ public static class AudioVolume
             AudioListener.volume = volume;
             PlayerPrefs.SetFloat("globalVolume", volume);
             _globalVolume = volume;
-            
+            PlayerPrefs.Save();
+
         }
     }
 
