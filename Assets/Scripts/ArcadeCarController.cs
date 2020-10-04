@@ -132,7 +132,8 @@ public class ArcadeCarController : MonoBehaviour
             if (_brakeInput)
                 motionTargetRigidbody.AddForce(brakeStrength * -motionTargetRigidbody.velocity);
             if (Mathf.Abs(_speedInput) > 0)
-                motionTargetRigidbody.AddForce(transform.forward * _speedFrame);
+                // motionTargetRigidbody.AddForce(transform.forward * _speedFrame);
+                motionTargetRigidbody.AddForce(modelTransform.forward * _speedFrame);
         }
         else
         {
