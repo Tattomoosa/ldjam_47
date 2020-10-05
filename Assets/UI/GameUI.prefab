@@ -132,8 +132,8 @@ MonoBehaviour:
     text: Did we win?
   - lap: 5
     text: ...
-  - lap: 6
-    text: ...Guess not
+  - lap: 5
+    text: Guess not...
   - lap: 7
     text: I mean, usually a race ends after 3 laps... right?
   - lap: 10
@@ -144,8 +144,8 @@ MonoBehaviour:
     text: I mean, you gotta be kidding me.
   - lap: 21
     text: I really thought that would be it.
-  - lap: 0
-    text: 
+  - lap: 1
+    text: Here's TEXT!
   - lap: 0
     text: 
   - lap: 0
