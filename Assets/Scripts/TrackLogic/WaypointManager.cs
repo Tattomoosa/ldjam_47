@@ -11,6 +11,8 @@ public class WaypointManager : MonoBehaviour
     void Awake()
     {
         _waypoints = GetComponentsInChildren<Waypoint>().ToList();
+        foreach (Waypoint wp in _waypoints)
+            wp.gameObject.layer = LayerMask.NameToLayer("AI");
     }
 
     public Waypoint GetNextWaypoint(Waypoint waypoint)
