@@ -8,6 +8,8 @@ public class AICarSpawner : MonoBehaviour
     public GameObject spawnObject;
     public WaypointManager waypointManager;
     public float oddsToSpawn = 0.001f;
+    public MeshRenderer spawnObjectRenderer;
+    public List<Material> carPaintList = new List<Material>();
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class AICarSpawner : MonoBehaviour
         float chance = Random.Range(0.0f, 1.0f);
         if (chance < oddsToSpawn)
         {
+            spawnObjectRenderer.material = carPaintList[Random.Range(0, carPaintList.Count - 1)];
             GameObject obj = Instantiate(spawnObject, transform);
             CarInputAI c = obj.GetComponent<CarInputAI>();
             c.waypointManager = waypointManager;

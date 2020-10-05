@@ -763,6 +763,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575406728}
   m_CullTransparentMesh: 0
+--- !u!23 &601435780 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1917183389302979214, guid: f1f631d5e75cf724bb6d15639d872b0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8828517691404500414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &601669145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2848,6 +2854,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
         type: 3}
+      propertyPath: carPaintList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
       propertyPath: waypointManager
       value: 
       objectReference: {fileID: 1718423578}
@@ -2856,5 +2867,50 @@ PrefabInstance:
       propertyPath: oddsToSpawn
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: spawnObjectRenderer
+      value: 
+      objectReference: {fileID: 601435780}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 765270984ecceda48ad8e25de88f64f7, type: 2}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 339c2e98428a8c14db1c1a886c001058, type: 2}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f2656e0059b61f41890b6cc5366a273, type: 2}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55b5fe564e883d145a8c08954137edf0, type: 2}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3502894b1b62c3048a61e96cddace8d8, type: 2}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a51a05154425b54eb0e117de706be10, type: 2}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: e465f867aa4d5ab4d8162f1dbea7616e, type: 2}
+    - target: {fileID: 8828517691171589163, guid: f1f631d5e75cf724bb6d15639d872b0c,
+        type: 3}
+      propertyPath: carPaintList.Array.data[7]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81165493341d79b4785ed3ddad89de2b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1f631d5e75cf724bb6d15639d872b0c, type: 3}
