@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class WeaponManager : MonoBehaviour
     public List<Transform> spawnLocations;
     int numOfWeapons;
     GameObject curWeapon;
+    Weapon curWeaponScript;
     private CarInput _input;
+    float timeToFire;
+    public Text countDownTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +22,12 @@ public class WeaponManager : MonoBehaviour
         if(numOfWeapons > 0)
         {
             curWeapon = weapons[0];
+            curWeaponScript = curWeapon.GetComponentInChildren<Weapon>();
         }
         else
         {
             curWeapon = null;
+            curWeaponScript = null;
         }
     }
 
@@ -29,7 +35,15 @@ public class WeaponManager : MonoBehaviour
     void Update()
     {
         if(Time.timeScale != 0)
+        {
+            timeToFire += Time.deltaTime;
+            timeToFire = Mathf.Clamp(timeToFire, 0f, curWeaponScript.delay);
+            if(gameObject.GetComponent<CarInputPlayer>() != null)
+            {
+                countDownTimer.text = timeToFire == curWeaponScript.delay ? "Fire!" : (curWeaponScript.delay - timeToFire).ToString();
+            }
             checkInput();
+        }
     }
 
     void checkInput()
@@ -37,13 +51,12 @@ public class WeaponManager : MonoBehaviour
         InputState inputState = _input.GetInput();
         if (inputState.Fire)
         {
-            if(curWeapon != null)
+            if(curWeapon != null && timeToFire >= curWeaponScript.delay)
             {
                 GameObject g = Instantiate<GameObject>(curWeapon);
                 Weapon weaponScript = g.GetComponentInChildren<Weapon>();
-                Debug.Log(weaponScript);
-                Debug.Log(spawnLocations[weapons.IndexOf(curWeapon)].position);
                 weaponScript.fire(spawnLocations[weapons.IndexOf(curWeapon)].position);
+                timeToFire = 0f;
             }
         }
         else if (inputState.SelectNextWeapon)
