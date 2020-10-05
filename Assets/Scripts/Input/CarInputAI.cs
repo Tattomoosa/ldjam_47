@@ -73,6 +73,7 @@ public class CarInputAI : CarInput
             _input.HorizontalSteeringAxis = Mathf.Clamp(angle, -1.0f, 1.0f);
         else
             _input.HorizontalSteeringAxis = 0.0f;
+        _input.Fire = true;
     }
 
     public void FixedUpdate()
