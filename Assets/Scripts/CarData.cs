@@ -28,6 +28,8 @@ public class CarData : MonoBehaviour
     Vector3[] velhiclePositions;
     public float explosionForce;
 
+    public Rigidbody rb;
+
     // ok this is kinda dumb but otherwise we need ui reference
     public UnityEvent<float, float, float> setDamageUI;
 
@@ -104,6 +106,7 @@ public class CarData : MonoBehaviour
         destroyedFrontRightWheel.transform.position = velhiclePositions[4];
         destroyedRearRightWheel.transform.position = velhiclePositions[5];
         destroyedCockpit.transform.position = velhiclePositions[6];
+        rb.velocity = Vector3.zero;
         UpdateUI();
     }
 
