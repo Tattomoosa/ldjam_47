@@ -25,6 +25,22 @@ public class WaypointManager : MonoBehaviour
         return _waypoints[index + 1];
     }
 
+    public Waypoint GetClosestWaypoint(Vector3 position)
+    {
+        float closestDistance = 2147483647;
+        Waypoint closestWaypoint = null;
+        foreach (Waypoint wp in _waypoints)
+        {
+            float distance = (position - wp.transform.position).magnitude;
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestWaypoint = wp;
+            }
+        }
+        return closestWaypoint;
+    }
+
     public Waypoint GetFirstWaypoint()
     {
         if (_waypoints.Count() > 0)
