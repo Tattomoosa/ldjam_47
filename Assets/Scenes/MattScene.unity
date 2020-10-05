@@ -1332,6 +1332,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915355220050374958, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: m_Text
+      value: LAP TEXT
+      objectReference: {fileID: 0}
     - target: {fileID: 6445930133622301727, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
         type: 3}
       propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.size
