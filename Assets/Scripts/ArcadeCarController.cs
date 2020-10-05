@@ -175,4 +175,10 @@ public class ArcadeCarController : MonoBehaviour
         if (motionTargetRigidbody)
             motionTargetRigidbody.gameObject.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+        if (motionTargetRigidbody)
+            Destroy(motionTargetRigidbody.gameObject);
+    }
 }
