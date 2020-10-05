@@ -53,6 +53,6 @@ public class Mine : Weapon
         }
 
 
-        Destroy(this.gameObject, explosionSystem.main.duration);
+        Destroy(transform.parent.gameObject, explosionSystem.main.duration);
     }
 }
