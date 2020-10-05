@@ -18,7 +18,7 @@ public class Mine : Weapon
 
     override public void fire(Vector3 spawnPosition)
     {
-        transform.position = spawnPosition;
+        transform.parent.position = spawnPosition;
         StartCoroutine(armMine());
     }
 

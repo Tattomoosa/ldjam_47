@@ -40,7 +40,9 @@ public class WeaponManager : MonoBehaviour
             if(curWeapon != null)
             {
                 GameObject g = Instantiate<GameObject>(curWeapon);
-                Weapon weaponScript = g.GetComponent<Weapon>();
+                Weapon weaponScript = g.GetComponentInChildren<Weapon>();
+                Debug.Log(weaponScript);
+                Debug.Log(spawnLocations[weapons.IndexOf(curWeapon)].position);
                 weaponScript.fire(spawnLocations[weapons.IndexOf(curWeapon)].position);
             }
         }
