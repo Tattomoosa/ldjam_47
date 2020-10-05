@@ -362,9 +362,39 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e465f867aa4d5ab4d8162f1dbea7616e, type: 2}
     - target: {fileID: 1517000381316716596, guid: a9c1e2b2451aeea40bc39b5a91546865,
         type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517000381316716596, guid: a9c1e2b2451aeea40bc39b5a91546865,
+        type: 3}
       propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1896392246094398534}
+    - target: {fileID: 1517000381316716596, guid: a9c1e2b2451aeea40bc39b5a91546865,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2398384591226422478}
+    - target: {fileID: 1517000381316716596, guid: a9c1e2b2451aeea40bc39b5a91546865,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LapTextSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517000381316716596, guid: a9c1e2b2451aeea40bc39b5a91546865,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnLap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517000381316716596, guid: a9c1e2b2451aeea40bc39b5a91546865,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517000381316716596, guid: a9c1e2b2451aeea40bc39b5a91546865,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1546523729297244070, guid: a9c1e2b2451aeea40bc39b5a91546865,
         type: 3}
       propertyPath: m_Convex
@@ -851,5 +881,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2398384591226422478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6262538138057962141, guid: 098b3b6d6b4499f4289aea449b93ae23,
+    type: 3}
+  m_PrefabInstance: {fileID: 8620390332025386579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac3f6b9a3e06e74b8f98ee378e799f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
