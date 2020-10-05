@@ -829,6 +829,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ab76c6ea1f13f2429164b696a087d5f, type: 3}
+--- !u!114 &1083811513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2398384591226422478, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566408167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac3f6b9a3e06e74b8f98ee378e799f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1157905597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1312,6 +1324,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1214216620850731643, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00019836426
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214216620850731643, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0001373291
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398384591226422478, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: lapText.Array.data[1].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398384591226422478, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: lapText.Array.data[2].lap
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2398384591226422478, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: lapText.Array.data[2].text
+      value: Guess not...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293596781588998810, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293596781588998810, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LapTextSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293596781588998810, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293596781588998810, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293596781588998810, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1083811513}
+    - target: {fileID: 3293596781588998810, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnLap
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293596781588998810, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
+        type: 3}
+      propertyPath: onSetLap.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3895546639242862351, guid: 7e754e3a45c6a6a47a64e9e101bfa6a7,
         type: 3}
       propertyPath: m_LocalPosition.y
