@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 1284242545822219254}
   - component: {fileID: 5048632422515108610}
   - component: {fileID: 288560377281070559}
+  - component: {fileID: 4531107716825762857}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -119,6 +120,15 @@ MonoBehaviour:
     updateCameraInFixedUpdate: 1
     updateCameraInLateUpdate: 0
     switchViewKey: 0
+--- !u!45 &4531107716825762857
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448096370735282503}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 8b7dd0809c7c6498789fa32a61eaa6cb, type: 2}
 --- !u!1 &7963402731262481315
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +430,11 @@ PrefabInstance:
       propertyPath: setDamageUI.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7536255426812985776}
+    - target: {fileID: 7151324808803862093, guid: a9c1e2b2451aeea40bc39b5a91546865,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8436211858789686560, guid: a9c1e2b2451aeea40bc39b5a91546865,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -455,11 +470,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 339c2e98428a8c14db1c1a886c001058, type: 2}
-    - target: {fileID: 7151324808803862093, guid: a9c1e2b2451aeea40bc39b5a91546865,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8725558678481888324, guid: a9c1e2b2451aeea40bc39b5a91546865,
         type: 3}
       propertyPath: m_LocalPosition.x
