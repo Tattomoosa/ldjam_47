@@ -5123,7 +5123,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2d48eb5cc5db172439d2e849196e750a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.511
+  m_Volume: 0.522
   m_Pitch: 1.77
   Loop: 0
   Mute: 0
@@ -5167,7 +5167,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.793
+      value: 0.326
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5524,7 +5524,7 @@ MonoBehaviour:
   delay: 1
   beeper: {fileID: 4543723969768854056}
   beeperSpeed: 3
-  armTime: 1
+  armTime: 0.05
   explosionSystem: {fileID: 8493931868577871520}
   explosionRadiusTrigger: {fileID: 1237210799095734792}
 --- !u!54 &4899081434126199654

@@ -28,7 +28,7 @@ public class ProgressBar : MonoBehaviour
         if (shrinkLeft)
         {
             barFill.anchorMin = Vector2.zero;
-            barFill.anchorMax = new Vector2(percentFilled, 1.0f);
+            barFill.anchorMax = new Vector2(1.0f - percentFilled, 1.0f);
         }
         else
         {

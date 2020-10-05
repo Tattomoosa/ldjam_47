@@ -21,8 +21,6 @@ public class LapHighScoreText : MonoBehaviour
             }
         }
         else
-        {
-            
-        }
+            _text.text = "";
     }
 }

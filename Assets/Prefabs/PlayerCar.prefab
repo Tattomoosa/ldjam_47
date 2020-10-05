@@ -826,6 +826,9 @@ MonoBehaviour:
   spawnLocations:
   - {fileID: 5589976956921527917}
   countDownTimer: {fileID: 0}
+  onCountdown:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5026220866104420239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,8 +876,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.368557, z: 9.354218}
-  m_Center: {x: 0, y: -0.24308205, z: -0.22309875}
+  m_Size: {x: 1, y: 2.368557, z: 6.7289734}
+  m_Center: {x: 0, y: -0.24308205, z: 1.0895233}
 --- !u!1 &3531110867237244508
 GameObject:
   m_ObjectHideFlags: 0

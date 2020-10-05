@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class WeaponManager : MonoBehaviour
     private CarInput _input;
     float timeToFire;
     public Text countDownTimer;
+    public UnityEvent<float,float,float> onCountdown;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,8 @@ public class WeaponManager : MonoBehaviour
             timeToFire = Mathf.Clamp(timeToFire, 0f, curWeaponScript.delay);
             if(gameObject.GetComponent<CarInputPlayer>() != null)
             {
-                countDownTimer.text = timeToFire == curWeaponScript.delay ? "Fire!" : (curWeaponScript.delay - timeToFire).ToString();
+                // countDownTimer.text = timeToFire == curWeaponScript.delay ? "Fire!" : (curWeaponScript.delay - timeToFire).ToString();
+                onCountdown.Invoke(0, curWeaponScript.delay, timeToFire);
             }
             checkInput();
         }
