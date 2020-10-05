@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RaceStartSystem : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class RaceStartSystem : MonoBehaviour
     public List<GameObject> lights;
     private ArcadeCarController[] _cars;
     WeaponManager[] weaponManagers;
+    public UnityEvent onRaceStart;
     
     void Start()
     {
@@ -41,5 +43,6 @@ public class RaceStartSystem : MonoBehaviour
             car.enabled = true;
         foreach (var weaponManager in weaponManagers)
             weaponManager.enabled = true;
+        onRaceStart.Invoke();
     }
 }
