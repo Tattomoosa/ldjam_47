@@ -12,6 +12,8 @@ public class CarInputAI : CarInput
     
     public float waypointMaximumOffset = 40.0f;
     public float speedRange = 0.1f;
+    public float mineSpawnBase = 7.0f;
+    public float mineSpawnRange = 4.0f;
 
     public bool debugDraw = true;
         
@@ -19,6 +21,7 @@ public class CarInputAI : CarInput
 
     private Vector3 _waypointOffset;
     private float _speedOffset;
+    private bool _weaponCooldownActive;
 
     private Waypoint _targetWaypoint;
     public Waypoint TargetWaypoint
@@ -41,6 +44,14 @@ public class CarInputAI : CarInput
         _input = new InputState();
         TargetWaypoint = waypointManager.GetFirstWaypoint();
         _speedOffset = Random.Range(-speedRange, speedRange);
+    }
+
+    IEnumerator WaitToSpawnMine()
+    {
+        float spawnTime = mineSpawnBase + Random.Range(-mineSpawnRange, mineSpawnRange);
+        _weaponCooldownActive = true;
+        yield return new WaitForSeconds(spawnTime);
+        _weaponCooldownActive = false;
     }
 
     public override InputState GetInput()
@@ -73,7 +84,13 @@ public class CarInputAI : CarInput
             _input.HorizontalSteeringAxis = Mathf.Clamp(angle, -1.0f, 1.0f);
         else
             _input.HorizontalSteeringAxis = 0.0f;
-        _input.Fire = true;
+        if (!_weaponCooldownActive)
+        {
+            _input.Fire = true;
+            StartCoroutine(WaitToSpawnMine());
+        }
+        else
+            _input.Fire = false;
     }
 
     public void FixedUpdate()
