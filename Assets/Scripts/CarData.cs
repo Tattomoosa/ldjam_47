@@ -24,6 +24,7 @@ public class CarData : MonoBehaviour
     public GameObject destroyedFrontRightWheel;
     public GameObject destroyedRearRightWheel;
     public GameObject destroyedCar;
+    public GameObject destroyedCockpit;
     Vector3[] velhiclePositions;
     public float explosionForce;
 
@@ -33,7 +34,7 @@ public class CarData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velhiclePositions = new Vector3[6];
+        velhiclePositions = new Vector3[7];
         curHealth = health;
         arcadeCarController = GetComponent<ArcadeCarController>();
         UpdateUI();
@@ -47,6 +48,7 @@ public class CarData : MonoBehaviour
         velhiclePositions[3] = RearLeftWheel.transform.position;
         velhiclePositions[4] = FrontRightWheel.transform.position;
         velhiclePositions[5] = RearRightWheel.transform.position;
+        velhiclePositions[6] = destroyedCockpit.transform.position;
     }
 
     public void takeDamage(int incomingDamage)
@@ -101,6 +103,7 @@ public class CarData : MonoBehaviour
         destroyedRearLeftWheel.transform.position = velhiclePositions[3];
         destroyedFrontRightWheel.transform.position = velhiclePositions[4];
         destroyedRearRightWheel.transform.position = velhiclePositions[5];
+        destroyedCockpit.transform.position = velhiclePositions[6];
         UpdateUI();
     }
 
