@@ -765,6 +765,7 @@ MonoBehaviour:
   destroyedCar: {fileID: 2854630241442415778}
   destroyedCockpit: {fileID: 2467021753853083292}
   explosionForce: 10000
+  rb: {fileID: 3531110867237244505}
   setDamageUI:
     m_PersistentCalls:
       m_Calls: []
