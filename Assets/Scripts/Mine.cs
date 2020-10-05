@@ -41,6 +41,8 @@ public class Mine : Weapon
     private void OnTriggerEnter(Collider other)
     {
         CarData carDataScript = other.gameObject.transform.GetComponent<CarData>();
+        if (!carDataScript)
+            return;
         explosionRadiusTrigger.enabled = false;
         carDataScript.takeDamage(damage);
         // explosionSystem.Play();

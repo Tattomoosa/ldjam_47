@@ -16,6 +16,8 @@ MonoBehaviour:
   waypointManager: {fileID: 0}
   waypointMaximumOffset: 40
   speedRange: 0.1
+  mineSpawnBase: 7
+  mineSpawnRange: 4
   debugDraw: 1
 --- !u!1001 &5845391469765983847
 PrefabInstance:
@@ -24,6 +26,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3531110867179350277, guid: 9f7bd68087ad267479b541cb1dfe91a2,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.131
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531110867179350277, guid: 9f7bd68087ad267479b541cb1dfe91a2,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3531110867179350280, guid: 9f7bd68087ad267479b541cb1dfe91a2,
         type: 3}
       propertyPath: m_Name
